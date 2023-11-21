@@ -1,5 +1,7 @@
 package com.example.LibraryManagement_System.Services.Impl;
 
+import com.example.LibraryManagement_System.DTO.RequestDTO.AuthorRequestDto;
+import com.example.LibraryManagement_System.DTO.RequestDTO.BookRequestDto;
 import com.example.LibraryManagement_System.Entities.Author;
 import com.example.LibraryManagement_System.Entities.Book;
 import com.example.LibraryManagement_System.Repositories.AuthorRepository;
@@ -14,6 +16,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public String addBook(Book book) throws Exception {
         Author author;
+        AuthorRequestDto authorRequestDto = new AuthorRequestDto();
         try{
             author = authorRepository.findById(book.getAuthor().getId()).get();
         }
@@ -27,4 +30,5 @@ public class BookServiceImpl implements BookService {
         authorRepository.save(author);
         return "Book added Successfully";
     }
+
 }

@@ -20,7 +20,10 @@ public class Author {
     private int id;
     private String name;
     private int age;
+
+    @Column(unique = true)
     private String email;
+
     @OneToMany(mappedBy = "author",cascade = CascadeType.ALL)
     List<Book> book = new ArrayList<>();
 }

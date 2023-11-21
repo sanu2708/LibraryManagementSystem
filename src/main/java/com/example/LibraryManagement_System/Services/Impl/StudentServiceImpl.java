@@ -69,11 +69,11 @@ public class StudentServiceImpl implements StudentService {
             student.setMobNo(studentUpdateMobNoReqDto.getMobNo());
             Student updatedStudent = studentRepository.save(student);
 
-            StudentUpdateMobNoResDto updateStudentMobNoResDto = new StudentUpdateMobNoResDto();
-            updateStudentMobNoResDto.setName(updatedStudent.getName());
-            updateStudentMobNoResDto.setMobNo(updatedStudent.getMobNo());
+            StudentUpdateMobNoResDto studentUpdateMobNoResDto = new StudentUpdateMobNoResDto();
+            studentUpdateMobNoResDto.setName(updatedStudent.getName());
+            studentUpdateMobNoResDto.setMobNo(updatedStudent.getMobNo());
 
-            return updateStudentMobNoResDto;
+            return studentUpdateMobNoResDto;
         }
         catch (Exception e)
         {
