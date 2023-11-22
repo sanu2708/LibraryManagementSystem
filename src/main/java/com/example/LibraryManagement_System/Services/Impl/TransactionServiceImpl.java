@@ -51,6 +51,7 @@ public class TransactionServiceImpl implements TransactionService {
         }
 
         transaction.setBook(book);
+        transaction.setCard(card);
 
         if(card.getCardStatus()!= CardStatus.ACTIVATED)
         {
